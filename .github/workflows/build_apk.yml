@@ -36,3 +36,8 @@ jobs:
       with:
         name: app-debug
         path: app/build/outputs/apk/debug/*.apk
+
+    - name: Generate gradlew if missing
+  run: |
+    ./gradlew --version || echo "Using system gradle"
+    gradle wrapper --gradle-version 8.0
